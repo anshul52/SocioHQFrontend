@@ -1,22 +1,22 @@
-import ScrollStack, { ScrollStackItem } from "../ui/ScrollStack";
+import ScrollStack, { ScrollStackItem as StackCard } from "../ui/ScrollStack";
 
-const ScrollStackItem = () => {
+const ScrollStackSection = () => {
   return (
     <ScrollStack>
-      <ScrollStackItem>
+      <StackCard>
         <h2>Card 1</h2>
         <p>This is the first card in the stack</p>
-      </ScrollStackItem>
-      <ScrollStackItem>
+      </StackCard>
+      <StackCard>
         <h2>Card 2</h2>
         <p>This is the second card in the stack</p>
-      </ScrollStackItem>
-      <ScrollStackItem>
+      </StackCard>
+      <StackCard>
         <h2>Card 3</h2>
         <p>This is the third card in the stack</p>
-      </ScrollStackItem>
+      </StackCard>
     </ScrollStack>
   );
 };
 
-export default ScrollStackItem;
+export default ScrollStackSection;

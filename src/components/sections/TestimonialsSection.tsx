@@ -2,6 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
+type TestimonialCardProps = {
+  logo: string;
+  text: string;
+  avatar: string;
+};
+
 // Testimonials Section
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -96,7 +102,7 @@ const TestimonialsSection = () => {
 export default TestimonialsSection;
 
 // Testimonial Card Component
-const TestimonialCard = ({ logo, text, avatar }) => {
+const TestimonialCard = ({ logo, text, avatar }: TestimonialCardProps) => {
   return (
     <Card className="min-w-full bg-gray-50 border-none">
       <CardContent className="p-8 lg:p-12 space-y-6">

@@ -17,6 +17,24 @@ import { Textarea } from "@/components/ui/textarea";
 import Nav from "@/components/sections/Nav";
 import Footer from "@/components/sections/Footer";
 
+type PhilosophyCardProps = {
+  title: string;
+  description: string;
+  image: string;
+  delay: number;
+};
+
+type ClientsMarqueeProps = {
+  logos: string[];
+  speed?: number;
+};
+
+type TestimonialCardProps = {
+  logo: string;
+  text: string;
+  avatar: string;
+};
+
 // Hero Section Component
 const HeroSection = () => {
   return (
@@ -68,7 +86,12 @@ const HeroSection = () => {
 };
 
 // Philosophy Card Component
-const PhilosophyCard = ({ title, description, image, delay }) => {
+const PhilosophyCard = ({
+  title,
+  description,
+  image,
+  delay,
+}: PhilosophyCardProps) => {
   return (
     <Card
       className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
@@ -143,7 +166,7 @@ const BusinessPhilosophy = () => {
 };
 
 // Clients Marquee Component
-const ClientsMarquee = ({ logos, speed = 40 }) => {
+const ClientsMarquee = ({ logos, speed = 40 }: ClientsMarqueeProps) => {
   return (
     <div className="overflow-hidden py-4">
       <div
@@ -230,7 +253,7 @@ const ClientsSection = () => {
 };
 
 // Testimonial Card Component
-const TestimonialCard = ({ logo, text, avatar }) => {
+const TestimonialCard = ({ logo, text, avatar }: TestimonialCardProps) => {
   return (
     <Card className="min-w-full bg-gray-50 border-none">
       <CardContent className="p-8 lg:p-12 space-y-6">
@@ -355,12 +378,14 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
