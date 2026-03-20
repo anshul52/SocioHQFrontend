@@ -1,25 +1,14 @@
-import Image from "next/image";
-import {
-  ArrowRight,
-  ClipboardCheck,
-  Lightbulb,
-  Search,
-} from "lucide-react";
+"use client";
 
-const keywordPills = [
-  "SEO",
-  "Market Research",
-  "Content Marketing",
-  "Advertising",
-  "Keywords",
-  "Social Media",
-];
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ClipboardCheck, Lightbulb } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
 const featureItems = [
   {
     title: "On Page SEO",
-    description:
-      "Our on-site SEO services ensure you're heard loud and clear.",
+    description: "Our on-site SEO services ensure you're heard loud and clear.",
     icon: Lightbulb,
   },
   {
@@ -29,73 +18,105 @@ const featureItems = [
     icon: ClipboardCheck,
   },
 ];
+const featureItems2 = [
+  {
+    title: "Comprehensive Performance Reports",
+    description:
+      "Stay ahead of the curve with our comprehensive 360 reports for your campaigns",
+    icon: Lightbulb,
+  },
+  {
+    title: "Precise Ad Targeting",
+    description:
+      "Our PPC services are fine-tuned to identify and engage your ideal customer demographic directly",
+    icon: ClipboardCheck,
+  },
+];
+const featureItems3 = [
+  {
+    title: "Strategy Management",
+    description:
+      "We map your social media journey from obscurity to online stardom with precision and flair.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Visual Storytelling",
+    description:
+      "Our visuals don’t just capture eyes, they capture hearts making sure your social media stands out in the crowd.",
+    icon: ClipboardCheck,
+  },
+];
+const featureItems4 = [
+  {
+    title: "Smart Retargeting",
+    description:
+      "Smart Retargeting Campaigns can increase sales and engagement for your business.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Advanced Chatbots",
+    description:
+      "Simplify communication with your customers using personalized responses with advanced chatbots.",
+    icon: ClipboardCheck,
+  },
+];
+const featureItems5 = [
+  {
+    title: "Advanced Data Analytics",
+    description:
+      "Making smarter, data-driven decisions by transforming complex information into clear, actionable insights.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Digital Strategy Creation",
+    description:
+      "We map successful digital journeys with innovative & impactful strategies helping you reach your ideal audience.",
+    icon: ClipboardCheck,
+  },
+];
 
 const OurServices2 = () => {
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 1, 0.5, 1],
+      },
+    },
+  };
   return (
-    <section className="bg-white px-4 py-20 md:px-6 lg:py-24">
-      <div className="mx-auto grid max-w-[1520px] items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16">
-        <div className="relative min-h-[620px] overflow-hidden rounded-[28px] border border-[#d8e4ff] bg-[#5c82ea] px-6 pt-8 shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] sm:px-8 sm:pt-10 md:min-h-[720px] md:px-10 lg:min-h-[724px]">
-          <div className="relative z-10 flex flex-col items-center">
-            <div className="flex w-full max-w-[278px] items-center justify-between rounded-full border border-white/45 bg-white/8 px-5 py-3 text-white/85 shadow-[0_10px_30px_rgba(39,69,158,0.18)] backdrop-blur-[2px] sm:max-w-[276px]">
-              <span className="font-inter text-[14px] font-medium">
-                Top Keywords
-              </span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#8f96ab] shadow-[0_8px_18px_rgba(0,0,0,0.12)]">
-                <Search className="h-4 w-4" strokeWidth={2.4} />
-              </span>
-            </div>
-
-            <div className="mt-8 flex max-w-[520px] flex-wrap items-center justify-center gap-3">
-              {keywordPills.map((pill, index) => {
-                const isActive = index === 0;
-
-                return (
-                  <span
-                    key={pill}
-                    className={`inline-flex h-10 items-center justify-center rounded-full px-6 font-inter text-[14px] font-semibold tracking-[-0.01em] ${
-                      isActive
-                        ? "bg-[linear-gradient(90deg,#ff9e36_0%,#ff5f67_100%)] text-white shadow-[0_10px_25px_rgba(255,111,83,0.3)]"
-                        : "border border-white/65 bg-white/7 text-white shadow-[0_8px_18px_rgba(34,55,124,0.14)]"
-                    }`}
-                  >
-                    {pill}
-                  </span>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="pointer-events-none absolute left-[-4%] top-[56%] h-[24px] w-[54%] rounded-full bg-[linear-gradient(90deg,#0b74e7_0%,#2558da_100%)] opacity-95 blur-[0.2px]" />
-          <div className="pointer-events-none absolute right-[5%] top-[59%] h-[28px] w-[42%] rounded-full bg-[linear-gradient(90deg,#2f1de2_0%,#2f05b5_100%)] opacity-95 blur-[0.2px]" />
-          <div className="pointer-events-none absolute bottom-[92px] left-1/2 z-20 h-[112px] w-[300px] -translate-x-1/2 rotate-[9deg] rounded-[50%] border-[18px] border-[#150db7] sm:h-[120px] sm:w-[332px] md:bottom-[90px] md:h-[126px] md:w-[348px] md:border-[20px]" />
-
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[130px] bg-[linear-gradient(180deg,rgba(92,130,234,0)_0%,rgba(92,130,234,0.08)_35%,rgba(92,130,234,0.42)_100%)]" />
-
+    <section className="bg-white bg-amber-500">
+      {/* -----------------part1------------------- */}
+      <div className="mx-auto grid max-w-7xl px-12 items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16">
+        <div className="relative min-h-[620px] overflow-hidden rounded-[12px] bg-amber-300 shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] md:min-h-[570px] ">
           <Image
-            src="/images/c24tZY8YyftvOBMoIVozjFcsU.avif"
+            src="/images/GAkCtgb12qT91vQy7Wlo801FeNg.avif"
             alt="SEO illustration"
-            width={974}
-            height={1024}
-            className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-auto w-[74%] max-w-[540px] -translate-x-1/2 select-none md:w-[68%]"
+            fill
+            sizes="(min-width: 1024px) 48rem, 100vw"
+            className="pointer-events-none absolute inset-0 z-10 select-none object-cover object-center"
             priority={false}
           />
         </div>
 
         <div className="flex flex-col justify-center">
-          <div className="inline-flex w-fit items-center gap-3 rounded-[18px] border border-[#dbe3ef] bg-white px-4 py-4 shadow-[0_12px_28px_rgba(15,23,42,0.04)] sm:gap-4 sm:px-5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#0e1326] text-white sm:h-10 sm:w-10">
-              <ArrowRight className="h-5 w-5" strokeWidth={2.4} />
+          <div className="inline-flex w-fit items-center gap-3 rounded-[12px] border border-[#dbe3ef] bg-white px-4 py-4 sm:gap-4 sm:px-5">
+            <span className="flex h-4 w-4 items-center justify-center bg-[#0e1326] text-white ">
+              <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
             </span>
-            <span className="font-inter text-[18px] font-semibold leading-none tracking-[-0.03em] text-[#12182b] sm:text-[22px]">
+            <span className="font-inter text-[18px] font-bold leading-none tracking-[-0.03em] text-[#12182b]">
               Dominate The Top Rankings
             </span>
           </div>
 
-          <h2 className="mt-8 max-w-[760px] font-lexend text-[42px] font-medium leading-[1.02] tracking-[-0.05em] text-[#090f23] sm:text-[52px] lg:text-[66px]">
+          <h2 className="mt-5 max-w-[760px] font-mulish text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-[#090f23]">
             Search Engine Optimization
           </h2>
 
-          <p className="mt-8 max-w-[760px] font-inter text-[18px] font-normal leading-[1.78] tracking-[-0.02em] text-[#242a3a] sm:text-[20px]">
+          <p className="mt-6 max-w-[760px] font-mulish text-[18px] font-medium leading-[1.58] tracking-[-0.02em] text-[#242a3a]">
             Being a leading SEO agency in dubai, we ensure your brand not only
             gets found but dominates search engine results. With a holistic seo
             approach, we modify website content and structure to boost
@@ -103,30 +124,358 @@ const OurServices2 = () => {
             leader.
           </p>
 
-          <div className="mt-10 h-px w-full bg-[#dce3ec]" />
+          <div className="mt-8 h-px w-full bg-[#dce3ec]" />
 
-          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
+          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
             {featureItems.map(({ title, description, icon: Icon }) => (
               <div key={title} className="max-w-[320px]">
                 <div className="flex items-center gap-3">
                   <Icon className="h-7 w-7 text-[#0c1225]" strokeWidth={2.2} />
-                  <h3 className="font-inter text-[26px] font-medium tracking-[-0.03em] text-[#0c1225]">
+                  <h3 className="font-mulish text-[20px] font-semibold tracking-[-0.03em] text-[#0c1225]">
                     {title}
                   </h3>
                 </div>
-                <p className="mt-5 font-inter text-[16px] leading-[1.75] text-[#2d3446]">
+                <p className="mt-5 font-mulish text-[14px] font-normal leading-[1.45] text-[#0C1020]">
                   {description}
                 </p>
               </div>
             ))}
           </div>
+          <div className="flex items-center justify-start mt-10">
+            <motion.div variants={itemVariants} className="flex justify-center">
+              <div className="w-fit bg-black rounded-full">
+                <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                  <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                    Get Started
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      {/* -----------------part2------------------- */}
+      <div className="mx-auto py-32 grid max-w-7xl px-12 items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16">
+        <div className="flex flex-col justify-center">
+          <div className="inline-flex w-fit items-center gap-3 rounded-[12px] border border-[#dbe3ef] bg-white px-4 py-4 sm:gap-4 sm:px-5">
+            <span className="flex h-4 w-4 items-center justify-center bg-[#0e1326] text-white ">
+              <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
+            </span>
+            <span className="font-inter text-[18px] font-normal leading-none tracking-[-0.03em] text-[#12182b]">
+              Unlock Your Online Potential
+            </span>
+          </div>
 
-          <button
-            type="button"
-            className="mt-12 inline-flex w-fit items-center justify-center rounded-full border border-[#0a0f1f] bg-[#111111] px-9 py-4 font-inter text-[17px] font-semibold text-white shadow-[0_0_0_3px_#d2e4f5,0_16px_34px_rgba(17,17,17,0.12)] transition-transform duration-300 hover:scale-[1.02]"
-          >
-            Get Started
-          </button>
+          <h2 className="mt-5 max-w-[760px] font-mulish text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-[#090f23]">
+            Pay Per Click
+          </h2>
+
+          <p className="mt-6 max-w-[760px] font-mulish text-[18px] font-medium leading-[1.58] tracking-[-0.02em] text-[#242a3a]">
+            Accelerating brand visibility with targeted PPC campaigns that
+            deliver instant results. As a key component of our paid advertising
+            offerings, PPC ensures your brand reaches the right audience quickly
+            and effectively. Our strategic Google ads placement and optimized
+            bidding strategies ensure that every click counts, maximizing your
+            ROI while capturing the attention of your ideal customers.
+          </p>
+
+          <div className="mt-8 h-px w-full bg-[#dce3ec]" />
+
+          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
+            {featureItems2.map(({ title, description, icon: Icon }) => (
+              <div key={title} className="max-w-[320px]">
+                <div className="flex items-center gap-3">
+                  <Icon className="h-7 w-7 text-[#0c1225]" strokeWidth={2.2} />
+                  <h3 className="font-mulish text-[20px] font-semibold tracking-[-0.03em] text-[#0c1225]">
+                    {title}
+                  </h3>
+                </div>
+                <p className="mt-5 font-mulish text-[14px] font-normal leading-[1.45] text-[#0C1020]">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-start mt-10">
+            <motion.div variants={itemVariants} className="flex justify-center">
+              <div className="w-fit bg-black rounded-full">
+                <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                  <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                    Get Started
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="relative min-h-[620px] overflow-hidden rounded-[12px] bg-amber-300 shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] md:min-h-[570px] ">
+          <Image
+            src="/images/RsbSPiAzsywWRGdpvKjXfcTqBII.avif"
+            alt="SEO illustration"
+            fill
+            sizes="(min-width: 1024px) 48rem, 100vw"
+            className="pointer-events-none absolute inset-0 z-10 select-none object-cover object-center"
+            priority={false}
+          />
+        </div>
+      </div>
+      {/* -----------------part3------------------- */}
+      <div className="mx-auto  bg-[#F1F5F9]">
+        <div className="py-32 mx-auto max-w-7xl lg:gap-16 grid  px-12 items-center gap-10 lg:grid-cols-[1.02fr_1fr]">
+          <div className="relative min-h-[620px] overflow-hidden rounded-[12px] shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] md:min-h-[570px] ">
+            <Image
+              src="/images/eVV5ZOP0UKNC9rJg5UkkJw1RE.avif"
+              alt="SEO illustration"
+              fill
+              sizes="(min-width: 1024px) 48rem, 100vw"
+              className="pointer-events-none absolute inset-0 z-10 select-none object-cover object-center"
+              priority={false}
+            />
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <div className="inline-flex w-fit items-center gap-3 rounded-[12px] border border-[#dbe3ef] bg-[#F1F5F9] px-4 py-4 sm:gap-4 sm:px-5">
+              <span className="flex h-4 w-4 items-center justify-center bg-[#0e1326] text-white ">
+                <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
+              </span>
+              <span className="font-inter text-[18px] font-normal leading-none tracking-[-0.03em] text-[#12182b]">
+                Amplify Your Brand Presence
+              </span>
+            </div>
+
+            <h2 className="mt-5 max-w-[760px] font-mulish text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-[#090f23]">
+              Social Media Ads
+            </h2>
+
+            <p className="mt-6 max-w-[760px] font-mulish text-[18px] font-medium leading-[1.58] tracking-[-0.02em] text-[#242a3a]">
+              We craft compelling campaigns that not only grab attention but
+              also drive meaningful engagement and conversions, ensuring your
+              brand shines in the social spotlight. Our expertise in influencer
+              marketing helps expand your brand reach and engagement by
+              connecting you with industry leaders for authentic collaborations.
+            </p>
+
+            <div className="mt-8 h-px w-full bg-[#dce3ec]" />
+
+            <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
+              {featureItems3.map(({ title, description, icon: Icon }) => (
+                <div key={title} className="max-w-[320px]">
+                  <div className="flex items-center gap-3">
+                    <Icon
+                      className="h-7 w-7 text-[#0c1225]"
+                      strokeWidth={2.2}
+                    />
+                    <h3 className="font-mulish text-[20px] font-semibold tracking-[-0.03em] text-[#0c1225]">
+                      {title}
+                    </h3>
+                  </div>
+                  <p className="mt-5 font-mulish text-[14px] font-normal leading-[1.45] text-[#0C1020]">
+                    {description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-start mt-10">
+              <motion.div
+                variants={itemVariants}
+                className="flex justify-center"
+              >
+                <div className="w-fit bg-black rounded-full">
+                  <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                    <motion.span
+                      aria-hidden="true"
+                      className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                    <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* -----------------part4------------------- */}
+      <div className="mx-auto py-32 grid max-w-7xl px-12 items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16">
+        <div className="flex flex-col justify-center">
+          <div className="inline-flex w-fit items-center gap-3 rounded-[12px] border border-[#dbe3ef] bg-white px-4 py-4 sm:gap-4 sm:px-5">
+            <span className="flex h-4 w-4 items-center justify-center bg-[#0e1326] text-white ">
+              <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
+            </span>
+            <span className="font-mulish text-[14px] font-normal leading-none tracking-[-0.03em] text-[#12182b]">
+              Drive your business growth
+            </span>
+          </div>
+
+          <h2 className="mt-5 max-w-[760px] font-mulish text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-[#090f23]">
+            Whatsapp Marketing
+          </h2>
+
+          <p className="mt-6 max-w-[760px] font-mulish text-[18px] font-medium leading-[1.58] tracking-[-0.02em] text-[#242a3a]">
+            Deliver messages that matter through our WhatsApp Marketing
+            Services. Our approach is designed for maximum engagement, allowing
+            for real-time interaction and personalized service that enhances
+            customer relationships and loyalty; leading to a successful digital
+            marketing business.
+          </p>
+
+          <div className="mt-8 h-px w-full bg-[#dce3ec]" />
+
+          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
+            {featureItems4.map(({ title, description, icon: Icon }) => (
+              <div key={title} className="max-w-[320px]">
+                <div className="flex items-center gap-3">
+                  <Icon className="h-7 w-7 text-[#0c1225]" strokeWidth={2.2} />
+                  <h3 className="font-mulish text-[20px] font-semibold tracking-[-0.03em] text-[#0c1225]">
+                    {title}
+                  </h3>
+                </div>
+                <p className="mt-5 font-mulish text-[14px] font-normal leading-[1.45] text-[#0C1020]">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-start mt-10">
+            <motion.div variants={itemVariants} className="flex justify-center">
+              <div className="w-fit bg-black rounded-full">
+                <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                  <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                    Get Started
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="relative min-h-[620px] overflow-hidden rounded-[12px] bg-amber-300 shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] md:min-h-[570px] ">
+          <Image
+            src="/images/ja41Cv2CszUTzMQprSeXYxix1uY.avif"
+            alt="SEO illustration"
+            fill
+            sizes="(min-width: 1024px) 48rem, 100vw"
+            className="pointer-events-none absolute inset-0 z-10 select-none object-cover object-center"
+            priority={false}
+          />
+        </div>
+      </div>
+      {/* -----------------part5------------------- */}
+      <div className="mx-auto grid max-w-7xl px-12 items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16">
+        <div className="relative min-h-[620px] overflow-hidden rounded-[12px] bg-[#A1B5FF] shadow-[0_0_0_3px_rgba(255,255,255,0.9)_inset] md:min-h-[570px] ">
+          <Image
+            src="/images/fCy1cBnqYJjWNbiO50pfY3w.avif"
+            alt="SEO illustration"
+            fill
+            sizes="(min-width: 1024px) 48rem, 100vw"
+            className="pointer-events-none absolute inset-0 z-10 select-none object-cover object-center"
+            priority={false}
+          />
+        </div>
+
+        <div className="flex flex-col justify-center">
+          <div className="inline-flex w-fit items-center gap-3 rounded-[12px] border border-[#dbe3ef] bg-white px-4 py-4 sm:gap-4 sm:px-5">
+            <span className="flex h-4 w-4 items-center justify-center bg-[#0e1326] text-white ">
+              <ArrowRight className="h-3 w-3" strokeWidth={2.4} />
+            </span>
+            <span className="font-mulish text-[14px] font-normal leading-none tracking-[-0.03em] text-[#12182b]">
+              Reach your ideal customers
+            </span>
+          </div>
+
+          <h2 className="mt-5 max-w-[760px] font-mulish text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-[#090f23]">
+            Lead Generation
+          </h2>
+
+          <p className="mt-6 max-w-[760px] font-mulish text-[18px] font-medium leading-[1.58] tracking-[-0.02em] text-[#242a3a]">
+            Generated piping hot leads through our multi-channel digital
+            marketing strategies. We identify and engage target audiences by
+            understanding their needs and preferences, ensuring our lead
+            generation efforts are tailored for maximum results. We combine
+            insight-driven approaches with effective targeting techniques to
+            attract and convert prospects who are eager to engage with your
+            brand.
+          </p>
+
+          <div className="mt-8 h-px w-full bg-[#dce3ec]" />
+
+          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
+            {featureItems5.map(({ title, description, icon: Icon }) => (
+              <div key={title} className="max-w-[320px]">
+                <div className="flex items-center gap-3">
+                  <Icon className="h-7 w-7 text-[#0c1225]" strokeWidth={2.2} />
+                  <h3 className="font-mulish text-[20px] font-semibold tracking-[-0.03em] text-[#0c1225]">
+                    {title}
+                  </h3>
+                </div>
+                <p className="mt-5 font-mulish text-[14px] font-normal leading-[1.45] text-[#0C1020]">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-start mt-10">
+            <motion.div variants={itemVariants} className="flex justify-center">
+              <div className="w-fit bg-black rounded-full">
+                <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                  <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                    Get Started
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

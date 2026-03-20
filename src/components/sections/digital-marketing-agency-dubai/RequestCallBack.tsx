@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone } from "lucide-react";
 import Image from "next/image";
-import { motion, Variants, AnimatePresence } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const RequestCallBack = () => {
   const itemVariants: Variants = {

@@ -1,15 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
-import {
-  ChevronDown,
-  Menu,
-  X,
-  Phone,
-  MessageCircle,
-  Instagram,
-  Facebook,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -384,7 +374,7 @@ const ContactSection = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
