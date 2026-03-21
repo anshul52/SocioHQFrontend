@@ -113,20 +113,20 @@ const Nav = () => {
             <div className="flex space-x-8">
               <Link
                 href="/"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/about-us"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
               >
                 About Us
               </Link>
               <div
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
-                className="relative flex items-center gap-1 px-3 py-2 cursor-pointer text-gray-900 hover:text-red-500"
+                className="relative flex items-center gap-1 px-3 py-2 font-lexend cursor-pointer text-gray-900 hover:text-red-500 text-[15px]"
               >
                 Services
                 <ChevronDown
@@ -139,25 +139,14 @@ const Nav = () => {
               </div>
               <Link
                 href="/industries"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
               >
                 Industries
               </Link>
-              <Link
-                href="/case-studies"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Case Studies
-              </Link>
-              <Link
-                href="/blogs"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Blogs
-              </Link>
+
               <Link
                 href="/contact-us"
-                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
               >
                 Contact Us
               </Link>
@@ -200,31 +189,11 @@ const Nav = () => {
 
 export default Nav;
 
-// function ServicesDropdown() {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <div className="w-80 absolute top-15 left-0">
-//       <div className="absolute mt-2 w-full bg-white rounded-2xl shadow-lg p-4 space-y-4">
-//         {services.map((service, index) => (
-//           <div
-//             key={index}
-//             className="flex items-center gap-3 cursor-pointer hover:bg-gray-200 p-2 rounded-lg transition"
-//           >
-//             <div>{service.icon}</div>
-//             <span className="text-gray-800 font-medium">{service.name}</span>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 function ServicesDropdown() {
   return (
     <div className="absolute top-full left-0 pt-2 w-80 bg-white rounded-2xl shadow-lg p-4 space-y-2 z-50">
       {services.map((service, index) => (
-        <Link key={index} href={service.href}>
+        <Link key={index} href={service.href} className="bg-blue-300">
           <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition">
             <div>{service.icon}</div>
             <span className="text-gray-800 font-medium">{service.name}</span>

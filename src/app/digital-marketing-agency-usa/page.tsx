@@ -9,6 +9,7 @@ import OurServices2 from "@/components/sections/digital-marketing-agency-dubai/O
 import Nav from "@/components/sections/Nav";
 import RequestCallBack from "@/components/sections/digital-marketing-agency-dubai/RequestCallBack";
 import OurPortfolio from "@/components/sections/digital-marketing-agency-dubai/OurPortfolio";
+import ClientsSection from "@/components/sections/ClientsSection";
 
 const DigitalMarketingAgencyUsa = () => {
   return (
@@ -16,6 +17,7 @@ const DigitalMarketingAgencyUsa = () => {
       <Nav />
       <HeroPage />
       <RequestCallBack />
+      <ClientsSection />
       <OurServices />
       <OurPortfolio />
       <TestimonialsSection />
