@@ -3,11 +3,14 @@ import {
   Instrument_Serif,
   Inter,
   Lexend,
-  Mulish, Geist } from "next/font/google";
+  Poppins,
+  Mulish,
+  Geist,
+} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +36,13 @@ const mulish = Mulish({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mulish",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -64,6 +74,7 @@ export default function RootLayout({
           lexend.variable,
           instrumentSerif.variable,
           mulish.variable,
+          poppins.variable,
         ].join(" ")}
       >
         {children}

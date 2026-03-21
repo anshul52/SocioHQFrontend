@@ -15,6 +15,7 @@
   --font-lexend: var(--font-lexend), sans-serif;
   --font-serif: var(--font-instrument-serif), serif;
   --font-mulish: var(--font-mulish), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
   --page-bg: #f8fbff;
   --surface: rgba(255, 255, 255, 0.88);
   --surface-strong: #ffffff;
@@ -1257,6 +1258,7 @@ main {
   --font-lexend: var(--font-lexend), sans-serif;
   --font-serif: var(--font-instrument-serif), serif;
   --font-mulish: var(--font-mulish), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
 }
 
 @layer base {

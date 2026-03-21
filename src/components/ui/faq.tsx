@@ -61,33 +61,32 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8 mt-10">
       <div className="max-w-4xl mx-auto">
         {/* FAQs Badge */}
-        <div className="flex justify-center mb-8">
-          <span className="inline-flex items-center px-6 py-2 rounded-full bg-[#C8FF00] text-black font-semibold text-sm tracking-wide">
+        <div className="flex justify-center mb-0">
+          <span className="inline-flex font-inter items-center px-4 py-1.5 rounded-lg bg-[#C8FF00] text-black font-semibold text-[12px] tracking-wide">
             FAQs
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="text-5xl md:text-6xl font-bold text-center text-black mb-16 leading-tight">
+        <h2 className="text-[52px] font-bold font-lexend tracking-tighter text-center mb-4">
           Frequently Asked Questions
-        </h1>
-
+        </h2>
         {/* FAQ List */}
-        <div className="space-y-0 border-t border-gray-200">
+        <div className="space-y-0 border border-gray-200 rounded-lg">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-gray-200 transition-all duration-300 hover:bg-gray-50"
+              className="border-b border-gray-200 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between py-8 px-6 text-left focus:outline-none focus:bg-gray-50 transition-all duration-200"
+                className="w-full flex items-center justify-between py-8 px-6 text-left  transition-all duration-200"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-lg md:text-xl font-semibold text-black pr-8 leading-relaxed">
+                <span className="text-lg md:text-xl font-poppins font-semibold text-black pr-8 leading-relaxed">
                   {faq.question}
                 </span>
                 <div className="flex-shrink-0 ml-4">
@@ -122,7 +121,7 @@ const FAQSection: React.FC = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="px-6 pb-8 text-gray-700 text-base md:text-lg leading-relaxed">
+                <div className="px-6 pb-8 text-black font-poppins text-base tracking-normal leading-6">
                   {faq.answer}
                 </div>
               </div>

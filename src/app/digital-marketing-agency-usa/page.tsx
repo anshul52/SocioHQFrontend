@@ -9,7 +9,6 @@ import OurServices2 from "@/components/sections/digital-marketing-agency-dubai/O
 import Nav from "@/components/sections/Nav";
 import RequestCallBack from "@/components/sections/digital-marketing-agency-dubai/RequestCallBack";
 import OurPortfolio from "@/components/sections/digital-marketing-agency-dubai/OurPortfolio";
-import WhatPeopleSaying from "@/components/sections/WhatPeopleSaying";
 
 const DigitalMarketingAgencyUsa = () => {
   return (
@@ -19,10 +18,9 @@ const DigitalMarketingAgencyUsa = () => {
       <RequestCallBack />
       <OurServices />
       <OurPortfolio />
-      <WhatPeopleSaying />
+      <TestimonialsSection />
       <OurServices2 />
       <FAQSection />
-      <TestimonialsSection />
       <InsightsPage />
       <ContactPage />
       <Footer />
