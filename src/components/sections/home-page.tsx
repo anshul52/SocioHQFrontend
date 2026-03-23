@@ -8,6 +8,7 @@ import ClientsSection from "@/components/sections/ClientsSection";
 import ContactPage from "@/components/sections/ContactPage";
 import Footer from "@/components/sections/Footer";
 import OurServices from "@/components/sections/Home/OurServices";
+import ScrollStack from "@/components/sections/Home/ScrollStack";
 import InsightsPage from "@/components/sections/InsightsPage";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { heroStat } from "@/lib/home-content";
@@ -159,6 +160,7 @@ export function HomePage() {
       <HeroSection />
       <ClientsSection />
       <OurServices />
+      <ScrollStack />
       {/* <AboutSection /> */}
       <TestimonialsSection />
       <InsightsPage />
