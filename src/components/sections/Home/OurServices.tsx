@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 type ServiceCard = {
   title: string;
@@ -57,7 +58,8 @@ const promoCards = [
     title: "Public Relation Solutions",
     href: "/pr-agency-dubai",
     icon: "https://framerusercontent.com/images/vlqq2HnWW3XIGdf89XqYep3hSw.png",
-    image: "https://framerusercontent.com/images/RfxOLZJ38FpVW6nptPChTk0UWx0.png?width=1243&height=894",
+    image:
+      "https://framerusercontent.com/images/RfxOLZJ38FpVW6nptPChTk0UWx0.png?width=1243&height=894",
     background: "bg-[#ffe2de]",
     titleColor: "text-[#c83302]",
   },
@@ -65,7 +67,8 @@ const promoCards = [
     title: "Simplify your WhatsApp Game.",
     href: "/whatsapp-marketing",
     icon: "https://framerusercontent.com/images/vlqq2HnWW3XIGdf89XqYep3hSw.png",
-    image: "https://framerusercontent.com/images/uRXPt2eLAsQ8VgfutkTvPu2fs.png?width=1786&height=1797",
+    image:
+      "https://framerusercontent.com/images/uRXPt2eLAsQ8VgfutkTvPu2fs.png?width=1786&height=1797",
     background: "bg-[#acfcfb]",
     titleColor: "text-[#045ea8]",
   },
@@ -260,7 +263,9 @@ export default function OurServices() {
             >
               <div className="relative z-10 flex h-full max-w-[287px] flex-col items-start gap-[17px] px-[39px] pt-[71px]">
                 <IconBadge alt={`${card.title} icon`} src={card.icon} />
-                <h3 className={`font-lexend text-[24px] font-semibold leading-[1.2] ${card.titleColor}`}>
+                <h3
+                  className={`font-lexend text-[24px] font-semibold leading-[1.2] ${card.titleColor}`}
+                >
                   {card.title}
                 </h3>
               </div>
@@ -282,6 +287,41 @@ export default function OurServices() {
             </Link>
           ))}
         </div>
+        {/* bold brands */}
+        <Link
+          className="group relative block w-full overflow-hidden rounded-[20px] bg-[linear-gradient(115deg,#edf9ff_0%,#ffffff_54%,#fff6e3_100%)] px-6 py-12 transition-transform duration-200 hover:-translate-y-1 md:px-9 md:py-[64px] lg:min-h-[440px] lg:px-[60px] lg:py-[88px] flex items-center justify-center"
+          href="#contact"
+        >
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-[-6%] top-[14%] h-[280px] w-[280px] rounded-full bg-[#dff1ff] opacity-80 blur-[55px]" />
+            <div className="absolute bottom-[10%] right-[-4%] h-[290px] w-[290px] rounded-full bg-[#fff0c8] opacity-75 blur-[60px]" />
+            <div className="absolute left-1/2 top-1/2 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 blur-[60px]" />
+          </div>
+
+          <div className="relative z-10 mx-auto flex max-w-[1020px] flex-col items-center text-center">
+            <h3 className="font-inter text-[48px] font-medium leading-[0.98] tracking-[-0.075em] text-[#181d23] lg:whitespace-nowrap">
+              <span className="text-[48px]">Innovative solutions for </span>
+              <span className="mt-2 inline-flex items-center px-[0px] py-[3px]  md:mt-0 ">
+                <span className="text-[48px] font-serif text-[clamp(2.1rem,3.9vw,3.3rem)] font-normal italic leading-[0.9] tracking-[-0.04em] text-black">
+                  bold brands
+                </span>
+              </span>
+            </h3>
+
+            <p className="mt-7 max-w-[900px] font-inter text-[15px] leading-[1.45] text-[#7e8086]">
+              Looking to elevate your brand? We craft immersive experiences that
+              captivate, engage, and make your <br /> business unforgettable in
+              every interaction.
+            </p>
+
+            <span className="mt-9 inline-flex min-h-[50px] items-center gap-3 rounded-full bg-[#1c1d1f] py-[5px] pl-6 pr-[7px] font-inter text-[16px] font-medium text-white shadow-[0_18px_40px_-26px_rgba(15,23,42,0.5)] transition-transform duration-200 group-hover:scale-[1.015]">
+              <span>Let&apos;s craft together</span>
+              <span className="inline-flex h-[30px] w-[30px] items-center justify-center rounded-full bg-white text-[#1c1d1f]">
+                <ArrowUpRight className="h-[17px] w-[17px]" strokeWidth={2.1} />
+              </span>
+            </span>
+          </div>
+        </Link>
       </div>
     </section>
   );
