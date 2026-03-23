@@ -92,8 +92,7 @@ const stackSlides: StackSlide[] = [
 function LearnMorePill() {
   return (
     <span className="relative inline-flex min-h-[46px] items-center justify-center rounded-full px-5 py-3 font-inter text-[14px] font-medium text-white">
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(50%_100%_at_50%_50%,rgb(181,225,255)_0%,rgba(181,225,255,0)_100%)] blur-[15px]" />
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(49.266%_119%_at_50%_50%,rgb(125,203,255)_0%,rgba(125,203,255,0)_100%)] opacity-70" />
+      <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-[rgb(181,225,255)] to-transparent opacity-20" />
       <span className="relative rounded-full bg-[#0a0a0a] px-5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
         Learn More
       </span>
@@ -114,17 +113,6 @@ function StackCard({ slide }: { slide: StackSlide }) {
         rel="noreferrer"
         target="_blank"
       >
-        {/* Optimized glow effect */}
-        <div
-          className="pointer-events-none absolute right-[6%] top-[8%] h-[170px] w-[170px] rounded-full opacity-60"
-          style={{
-            backgroundColor: slide.glowColor,
-            filter: "blur(80px)",
-            transform: "translateZ(0)",
-            willChange: "transform",
-          }}
-        />
-
         <div
           className={`relative grid min-h-[500px] items-stretch gap-8 lg:min-h-[496px] ${
             slide.reverse
@@ -176,6 +164,7 @@ function StackCard({ slide }: { slide: StackSlide }) {
                 src={slide.image}
                 priority={false}
                 loading="lazy"
+                quality={85}
               />
             </div>
           </div>
@@ -206,83 +195,52 @@ export default function ScrollStack() {
       </div>
 
       <style jsx global>{`
-        .socio-scroll-gradient-1,
-        .socio-scroll-gradient-2,
-        .socio-scroll-gradient-3,
-        .socio-scroll-gradient-4,
-        .socio-scroll-gradient-5,
-        .socio-scroll-gradient-6 {
-          position: relative;
-          contain: layout style paint;
-          transform: translateZ(0);
-          will-change: transform;
+        /* Force GPU acceleration and optimize rendering */
+        .scroll-stack-home-card {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          perspective: 1000px;
+          -webkit-perspective: 1000px;
+          transform: translate3d(0, 0, 0);
+          -webkit-transform: translate3d(0, 0, 0);
         }
 
+        /* Ultra-simple solid color backgrounds - zero animation */
         .socio-scroll-gradient-1 {
-          background: linear-gradient(
-            135deg,
-            #99ffc5 0%,
-            #68e7d9 25%,
-            #7dc6ff 50%,
-            #a2d894 75%,
-            #99ffc5 100%
-          );
+          background-color: #b3f0d4;
         }
 
         .socio-scroll-gradient-2 {
-          background: linear-gradient(
-            135deg,
-            hsl(245, 62%, 96%) 0%,
-            hsl(240, 100%, 91%) 33%,
-            hsl(240, 90%, 86%) 66%,
-            hsl(243, 65%, 91%) 100%
-          );
+          background-color: #e8e7f5;
         }
 
         .socio-scroll-gradient-3 {
-          background: linear-gradient(
-            135deg,
-            hsl(24, 62%, 96%) 0%,
-            hsl(21, 69%, 89%) 33%,
-            hsl(21, 76%, 86%) 66%,
-            hsl(22, 62%, 81%) 100%
-          );
+          background-color: #f7e8dd;
         }
 
         .socio-scroll-gradient-4 {
-          background: linear-gradient(
-            135deg,
-            hsl(2, 86%, 94%) 0%,
-            hsl(2, 86%, 90%) 33%,
-            hsl(2, 100%, 88%) 66%,
-            hsl(1, 94%, 88%) 100%
-          );
+          background-color: #fce8ea;
         }
 
         .socio-scroll-gradient-5 {
-          background: linear-gradient(
-            135deg,
-            hsl(150, 100%, 96%) 0%,
-            hsl(149, 75%, 92%) 33%,
-            hsl(149, 93%, 90%) 66%,
-            hsl(150, 100%, 93%) 100%
-          );
+          background-color: #e0f8f0;
         }
 
         .socio-scroll-gradient-6 {
-          background: linear-gradient(
-            135deg,
-            hsl(198, 100%, 96%) 0%,
-            hsl(197, 90%, 87%) 33%,
-            hsl(197, 91%, 92%) 66%,
-            hsl(195, 79%, 88%) 100%
-          );
+          background-color: #e3f3f9;
         }
 
+        /* Optimize text rendering */
         .scroll-stack-home-card * {
-          backface-visibility: hidden;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeSpeed;
+        }
+
+        /* Optimize images */
+        .scroll-stack-home-card img {
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
         }
       `}</style>
     </section>

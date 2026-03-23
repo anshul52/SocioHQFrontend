@@ -98,7 +98,7 @@ const Nav = () => {
   return (
     <nav className="bg-white border-b sticky top-0 z-50">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
@@ -138,10 +138,10 @@ const Nav = () => {
                 {open && <ServicesDropdown />}
               </div>
               <Link
-                href="/industries"
+                href="/career"
                 className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
               >
-                Industries
+                Career
               </Link>
 
               <Link
@@ -152,10 +152,10 @@ const Nav = () => {
               </Link>
             </div>
             <div>
-              <button className="ml-4 inline-flex items-center bg-[#28d367] hover:bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors">
+              <button className="ml-4 inline-flex font-inter font-semibold items-center bg-[#28d367] hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm transition-all duration-300 ease-out">
                 <WhatsAppIcon /> WhatsApp
               </button>
-              <button className="ml-4 inline-flex items-center bg-[#f0f0f0] hover:bg-blue-600 text-black px-6 py-2 rounded-md text-sm font-medium transition-colors">
+              <button className="ml-4 inline-flex font-inter font-semibold items-center bg-[#f0f0f0] hover:bg-blue-600 text-black px-6 py-2 rounded-full text-sm transition-all duration-300 ease-out hover:text-white">
                 <PhoneIcon /> +971 545255889
               </button>
             </div>
@@ -191,10 +191,10 @@ export default Nav;
 
 function ServicesDropdown() {
   return (
-    <div className="absolute top-full left-0 pt-2 w-80 bg-white rounded-2xl shadow-lg p-4 space-y-2 z-50">
+    <div className="absolute top-20 left-0 pt-2 w-80 bg-white rounded-2xl p-4 space-y-2 z-50">
       {services.map((service, index) => (
         <Link key={index} href={service.href} className="bg-blue-300">
-          <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition">
+          <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 py-4 rounded-lg transition">
             <div>{service.icon}</div>
             <span className="text-gray-800 font-medium">{service.name}</span>
           </div>

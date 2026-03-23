@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 export default function ContactPage() {
   return (
     <div
-      className="h-[80vh]  flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="h-[110vh]  flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/images/51tnZtqll1e78fxWnMl2oObKT0.avif')",
       }}
     >
-      <div className="w-full max-w-6xl flex rounded-3xl overflow-hidden shadow-2xl">
+      <div className="w-full max-w-6xl flex rounded-3xl overflow-hidden mt-4">
         {/* LEFT SIDE */}
         <div className="relative p-12 flex flex-col justify-center text-white ">
           {/* Decorative lines */}
@@ -26,7 +26,7 @@ export default function ContactPage() {
             <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-400 rounded-xl"></div>
           </div>
 
-          <h1 className="text-5xl font-semibold leading-tight mb-6">
+          <h1 className="text-[63px] font-semibold leading-tight mb-6">
             Have a project <br /> in mind? 👋
           </h1>
 
@@ -40,52 +40,56 @@ export default function ContactPage() {
         </div>
 
         {/* RIGHT SIDE */}
-        <Card className="rounded-3xl bg-[#f5f5f5]">
-          <CardContent className="p-10">
-            <div className="grid grid-cols-2 gap-4 mb-4">
+        <Card className="rounded-[2.5rem] bg-[#f5f5f5]">
+          <CardContent className="p-8 w-130">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium">
+                <label className="text-xs font-medium text-[#888888]">
                   Name<span className="text-red-500">*</span>
                 </label>
                 <Input
                   placeholder="Jane Smith"
-                  className="mt-2 bg-gray-200 border-none"
+                  className="mt-2 py-5 outline-blue-400 bg-gray-200 border-none"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium">
+                <label className="text-xs font-medium  text-[#888888]">
                   Email<span className="text-red-500">*</span>
                 </label>
                 <Input
                   placeholder="jane@gmail.com"
-                  className="mt-2 bg-gray-200 border-none"
+                  className="mt-2 py-5 bg-gray-200 border-none"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="text-sm font-medium">
+                <label className="text-xs font-medium  text-[#888888]">
                   Phone<span className="text-red-500">*</span>
                 </label>
                 <Input
                   placeholder="Enter your number"
-                  className="mt-2 bg-gray-200 border-none"
+                  className="mt-2 py-5 bg-gray-200 border-none"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium">Website</label>
+                <label className="text-xs font-medium  text-[#888888]">
+                  Website
+                </label>
                 <Input
                   placeholder="www.example.com"
-                  className="mt-2 bg-gray-200 border-none"
+                  className="mt-2 py-5 bg-gray-200 border-none"
                 />
               </div>
             </div>
 
             <div className="mb-6">
-              <label className="text-sm font-medium">Message</label>
+              <label className="text-xs font-medium  text-[#888888]">
+                Message
+              </label>
               <Textarea
                 placeholder="Enter your message"
                 className="mt-2 bg-gray-200 border-none min-h-[120px]"
