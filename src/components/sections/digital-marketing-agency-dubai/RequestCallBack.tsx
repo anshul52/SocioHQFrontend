@@ -1,5 +1,5 @@
 "use client";
-
+import { ImPhone } from "react-icons/im";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,7 +22,7 @@ const RequestCallBack = () => {
     },
   };
   return (
-    <section className="relative bg-black w-full min-h-screen flex items-center justify-center text-white overflow-hidden px-6 sm:px-18">
+    <section className="relative bg-black w-full min-h-screen flex items-center justify-center text-white overflow-hidden px-6 sm:px-18 py-25">
       <Image
         src="/images/bz2UmeMSBbPYYpljqZ4l0OHbDg.avif"
         alt="Background"
@@ -33,7 +33,7 @@ const RequestCallBack = () => {
 
       <div className="relative z-10 max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col items-start justify-center">
+        <div className="flex flex-col items-start justify-center pl-15">
           {/* Avatars + rating */}
           <div className="flex flex-col items-start gap-4 mb-6">
             <div className="flex -space-x-3">
@@ -78,7 +78,7 @@ const RequestCallBack = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-gray-300 max-w-xl mb-8 leading-relaxed">
+          <p className="text-gray-300 max-w-xl mb-8 leading-relaxed pr-20">
             We understand the pulse of digital advertising and specialize in
             crafting comprehensive digital marketing solutions that maximize
             your ROI. As a leading digital marketing agency recognized among top
@@ -107,17 +107,24 @@ const RequestCallBack = () => {
             </div>
           </motion.div>
         </div>
-
+        {/* text-[clamp(1.25rem,3.8vw,2.85rem)] */}
         {/* RIGHT FORM */}
-        <Card className="bg-white text-black rounded-2xl shadow-2xl w-full max-w-md mx-auto">
-          <CardContent className="p-8 space-y-5">
+        <Card className="bg-white text-black rounded-2xl shadow-2xl w-full max-w-[30rem] mx-auto">
+          <CardContent className="p-8 space-y-5 px-13">
             {/* Heading */}
             <div className="text-center space-y-2">
-              <h2 className="text-5xl font-inter flex font-medium justify-center items-center gap-2">
-                Request A <br /> Call Back
-                <Phone className="w-6 h-6 text-blue-500" />
+              <h2 className="inline-flex flex-col items-center text-center font-inter font-medium  text-[50px] leading-[1.2] tracking-[-0.08em]">
+                <span className="bg-[linear-gradient(90deg,#05111d_0%,#10263b_62%,#4d93cd_100%)] bg-clip-text text-transparent">
+                  Request A <span className="opacity-0">.</span>
+                </span>
+                <span className="flex items-end gap-3 relative">
+                  <span className="bg-[linear-gradient(90deg,#05111d_0%,#10263b_68%,#3d86c6_100%)] leading-[0.80] bg-clip-text text-transparent">
+                    Call Back<span className="opacity-0">.</span>
+                  </span>
+                  <ImPhone className=" h-12 w-12 shrink-0 rotate-[deg] text-[#3d86c6] stroke-[0.001]" />
+                </span>
               </h2>
-              <p className="text-gray-500 text-base font-inter">
+              <p className="text-gray-500 text-base font-inter mb-10">
                 To contact us, fill out the form below and we'll get back to you
                 within 24 hours.
               </p>
@@ -128,27 +135,27 @@ const RequestCallBack = () => {
               <div className="space-y-2 text-left">
                 <Label
                   htmlFor="full-name"
-                  className="text-gray-700 font-semibold px-1"
+                  className="text-[#8d8d8d] font-semibold text-xs"
                 >
-                  Full Name
+                  Name<span className="text-[#ff3232]">*</span>
                 </Label>
                 <Input
                   id="full-name"
                   placeholder="Jane Smith"
-                  className="rounded-xl border-gray-200"
+                  className="rounded-lg py-5 border-gray-200"
                 />
               </div>
               <div className="space-y-2 text-left">
                 <Label
                   htmlFor="email"
-                  className="text-gray-700 font-semibold px-1"
+                  className="text-[#8d8d8d] font-semibold text-xs"
                 >
-                  Email Address
+                  Email<span className="text-[#ff3232]">*</span>
                 </Label>
                 <Input
                   id="email"
                   placeholder="jane@gmail.com"
-                  className="rounded-xl border-gray-200"
+                  className="rounded-lg py-5 border-gray-200"
                 />
               </div>
             </div>
@@ -157,27 +164,27 @@ const RequestCallBack = () => {
               <div className="space-y-2 text-left">
                 <Label
                   htmlFor="phone"
-                  className="text-gray-700 font-semibold px-1"
+                  className="text-[#8d8d8d] font-semibold text-xs"
                 >
-                  Phone Number
+                  Phone<span className="text-[#ff3232]">*</span>
                 </Label>
                 <Input
                   id="phone"
                   placeholder="+91"
-                  className="rounded-xl border-gray-200"
+                  className="rounded-lg py-5 border-gray-200"
                 />
               </div>
               <div className="space-y-2 text-left">
                 <Label
                   htmlFor="website"
-                  className="text-gray-700 font-semibold px-1"
+                  className="text-[#8d8d8d] font-semibold text-xs"
                 >
-                  Website URL
+                  Website
                 </Label>
                 <Input
                   id="website"
                   placeholder="www.example.com"
-                  className="rounded-xl border-gray-200"
+                  className="rounded-lg py-5 border-gray-200"
                 />
               </div>
             </div>
@@ -185,18 +192,18 @@ const RequestCallBack = () => {
             <div className="space-y-2 text-left">
               <Label
                 htmlFor="message"
-                className="text-gray-700 font-semibold px-1"
+                className="text-[#8d8d8d] font-semibold px-1"
               >
                 Message
               </Label>
               <Textarea
                 id="message"
                 placeholder="Enter your message"
-                className="min-h-[120px] rounded-xl border-gray-200"
+                className="min-h-[120px] rounded-lg border-gray-200"
               />
             </div>
 
-            <Button className="w-full bg-black text-white hover:bg-gray-900 shadow-lg">
+            <Button className="w-full bg-[#333333] py-5 font-bold text-white hover:bg-gray-900 shadow-lg">
               Submit
             </Button>
           </CardContent>

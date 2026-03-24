@@ -22,7 +22,7 @@ const services = [
   {
     name: "Web Development",
     icon: <Code className="text-purple-500" size={20} />,
-    href: "/web-development",
+    href: "/web-development-agency-usa",
   },
   {
     name: "Search Engine Optimization",
@@ -109,8 +109,8 @@ const Nav = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:space-x-8 items-center">
-            <div className="flex space-x-8">
+          <div className="hidden md:flex md:space-x-58 items-center">
+            <div className="flex space-x-1">
               <Link
                 href="/"
                 className="text-gray-900 hover:text-red-500 px-3 py-2 rounded-md text-[15px] font-lexend font-medium transition-colors"
@@ -126,7 +126,7 @@ const Nav = () => {
               <div
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
-                className="relative flex items-center gap-1 px-3 py-2 font-lexend cursor-pointer text-gray-900 hover:text-red-500 text-[15px]"
+                className="relative flex items-center gap-1 px-3 py-2 font-lexend cursor-pointer text-gray-900 hover:text-gray-500 text-[15px]"
               >
                 Services
                 <ChevronDown
