@@ -1,22 +1,21 @@
-import React from "react";
 import Nav from "@/components/sections/Nav";
+import Hero from "@/components/sections/social-media-marketing-dubai/Hero";
 import FAQSection from "@/components/ui/faq";
 import Footer from "@/components/sections/Footer";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactPage from "@/components/sections/ContactPage";
 import ClientsSection from "@/components/sections/ClientsSection";
-import RequestCallBack from "@/components/sections/digital-marketing-agency-dubai/RequestCallBack";
-import InsightsPage from "@/components/sections/InsightsPage";
-import DominateTopRankings from "@/components/sections/seo-dubai/DominateTopRankings";
-import SeveralBigCompanies from "@/components/sections/seo-dubai/SeveralBigCompanies";
+import OurDigitalWorks from "@/components/sections/social-media-marketing-dubai/OurDigitalWorks";
 
 const Page = () => {
   return (
     <div className="w-full min-h-screen">
       <Nav />
-      {/*  */}
+      <Hero />
+      <OurDigitalWorks />
+      <ClientsSection />
+      <TestimonialsSection />
       <FAQSection />
-      <InsightsPage />
       <ContactPage />
       <Footer />
     </div>
