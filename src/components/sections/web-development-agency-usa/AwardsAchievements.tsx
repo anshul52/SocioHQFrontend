@@ -122,11 +122,11 @@ const AwardsAchievements = () => {
             </span>
           </div>
 
-          <h2 className="mt-6 font-inter text-[40px] font-semibold leading-[1.08] tracking-[-0.04em] text-[#171717] sm:text-[46px] lg:text-[52px]">
+          <h2 className="mt-6 text-[52px] font-bold font-lexend tracking-tighter text-center leading-[1.08]  text-[#171717] sm:text-[46px] lg:text-[52px]">
             Awards &amp; Achievements
           </h2>
 
-          <p className="mt-5 max-w-[860px] font-mulish text-[16px] leading-[1.8] tracking-[-0.01em] text-[#767575] sm:text-[18px] lg:text-[20px]">
+          <p className="mt-5 max-w-[860px] font-mulish text-[17px] leading-8 font-semibold tracking-[-0.01em] text-[#767575] md:text-[20px]">
             Socio stands tall as one of the top web development companies in
             Dubai. Our exceptional team of award-winning experts is the secret
             behind our success. Our ability to achieve business objectives by

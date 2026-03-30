@@ -1,5 +1,5 @@
 "use client";
-
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -117,10 +117,30 @@ function HeroSection() {
           </p>
 
           <div className="mt-[34px] flex flex-wrap items-center justify-center gap-[22px] max-[640px]:flex-col">
-            <Link className={ctaButtonClassName} href="#contact">
-              Get Started
-              <ArrowIcon />
-            </Link>
+            {/* Button */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 flex justify-center"
+            >
+              <div className="w-fit bg-black rounded-full shadow-[0_0_30px_rgba(20,179,168,0.3)]">
+                <div className="relative inline-flex rounded-full p-[1.5px] overflow-hidden">
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-[conic-gradient(from_90deg,transparent_0deg,transparent_295deg,#14b3a8_322deg,#0347A0_348deg,transparent_360deg)]"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
+                  <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
+                    Get Started
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
 
             <div className="flex items-center gap-[14px] text-base text-[#7d8597] max-[640px]:flex-col">
               <div className="flex items-center">

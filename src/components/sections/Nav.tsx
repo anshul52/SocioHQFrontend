@@ -27,22 +27,22 @@ const services = [
   {
     name: "Search Engine Optimization",
     icon: <Search className="text-pink-500" size={20} />,
-    href: "/search-engine-optimization",
+    href: "/seo-dubai",
   },
   {
     name: "Performance Marketing",
     icon: <Rocket className="text-yellow-400" size={20} />,
-    href: "/performance-marketing",
+    href: "/ppc-agency-dubai",
   },
   {
     name: "Social Media Marketing",
     icon: <Share2 className="text-green-500" size={20} />,
-    href: "/social-media-marketing",
+    href: "/social-media-marketing-dubai",
   },
   {
     name: "Branding",
     icon: <Palette className="text-cyan-400" size={20} />,
-    href: "/branding",
+    href: "/branding-agency-dubai",
   },
   {
     name: "WhatsApp Marketing",
@@ -52,7 +52,7 @@ const services = [
   {
     name: "PR",
     icon: <Speaker className="text-red-500" size={20} />,
-    href: "/pr",
+    href: "/pr-agency-dubai",
   },
 ];
 const WhatsAppIcon = () => (
@@ -191,7 +191,7 @@ export default Nav;
 
 function ServicesDropdown() {
   return (
-    <div className="absolute top-20 left-0 pt-2 w-80 bg-white rounded-2xl p-4 space-y-2 z-50">
+    <div className="absolute top-15 left-0 pt-2 w-80 bg-white rounded-2xl p-4 border space-y-2 z-50">
       {services.map((service, index) => (
         <Link key={index} href={service.href} className="bg-blue-300">
           <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 py-4 rounded-lg transition">

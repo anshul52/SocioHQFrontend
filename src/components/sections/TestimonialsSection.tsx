@@ -10,7 +10,7 @@ type Testimonial = {
 const clutchBadge =
   "https://framerusercontent.com/images/BLz62yFbXHFaiPHe8EkIYpL3F0.png?scale-down-to=512";
 
-const testimonialRows: Testimonial[][] = [
+export const testimonialRows: Testimonial[][] = [
   [
     {
       name: "Connection Chauffeur Limo",
@@ -80,7 +80,7 @@ const testimonialRows: Testimonial[][] = [
 const maskGradient =
   "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%)";
 
-const MarqueeRow = ({
+export const MarqueeRow = ({
   items,
   reverse = false,
 }: {
