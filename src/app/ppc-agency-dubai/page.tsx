@@ -7,8 +7,9 @@ import ContactPage from "@/components/sections/ContactPage";
 import ClientsSection from "@/components/sections/ClientsSection";
 import RequestCallBack from "@/components/sections/digital-marketing-agency-dubai/RequestCallBack";
 import InsightsPage from "@/components/sections/InsightsPage";
-import FourSection from "@/components/sections/ppc-agency-dubai/FourSection";
+import DominateTopRankings from "@/components/sections/seo-dubai/DominateTopRankings";
 import SeveralBigCompanies from "@/components/sections/seo-dubai/SeveralBigCompanies";
+import FourSection from "@/components/sections/ppc-agency-dubai/FourSection";
 
 const Page = () => {
   return (
@@ -17,7 +18,6 @@ const Page = () => {
       <RequestCallBack />
       <SeveralBigCompanies />
       <ClientsSection />
-
       {/*  */}
       <FourSection />
       {/*  */}
