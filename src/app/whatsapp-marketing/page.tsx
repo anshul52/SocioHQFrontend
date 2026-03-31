@@ -1,12 +1,11 @@
 import HeroSection from "@/components/sections/whatsapp-marketing/HeroSection";
+import TwoSection from "@/components/sections/whatsapp-marketing/TwoSection";
 import BrandsThatTrustUs from "@/components/sections/whatsapp-marketing/BrandsThatTrustUs";
+import OurServices from "@/components/sections/whatsapp-marketing/OurServices";
 import Nav from "@/components/sections/Nav";
-import FAQSection from "@/components/ui/faq";
 import Footer from "@/components/sections/Footer";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactPage from "@/components/sections/ContactPage";
-import ClientsSection from "@/components/sections/ClientsSection";
-import RequestCallBack from "@/components/sections/digital-marketing-agency-dubai/RequestCallBack";
 import InsightsPage from "@/components/sections/InsightsPage";
 
 const Page = () => {
@@ -15,8 +14,10 @@ const Page = () => {
       <Nav />
       <HeroSection />
       <BrandsThatTrustUs />
+      <OurServices />
+      <TwoSection />
       {/*  */}
-      <FAQSection />
+      <TestimonialsSection />
       <InsightsPage />
       <ContactPage />
       <Footer />
