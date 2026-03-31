@@ -1,4 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import {
+  type ClientsSectionContent,
+  usaDigitalMarketingAgencyContent,
+} from "@/content/digital-marketing-agency";
 
 type LogoImage = {
   type: "image";
@@ -351,7 +355,13 @@ function LogoRow({ items, direction = "left", duration }: LogoRowProps) {
   );
 }
 
-export default function ClientsSection() {
+type ClientsSectionProps = {
+  content?: ClientsSectionContent;
+};
+
+export default function ClientsSection({
+  content = usaDigitalMarketingAgencyContent.clients,
+}: ClientsSectionProps) {
   return (
     <section className="w-full bg-[#ffffff] py-8 md:py-16">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-10 px-6 lg:px-8">
@@ -361,16 +371,16 @@ export default function ClientsSection() {
               <span className="h-2.5 w-2.5 rounded-full bg-white" />
             </span>
             <span className="font-mulish text-[14px] leading-[1.6] text-[#020617]">
-              Our Customers
+              {content.badge}
             </span>
           </div>
 
           <h2 className="font-lexend text-[22px] font-bold leading-[1.16] tracking-[0] text-[#171717] sm:text-[33px] sm:tracking-[-0.04em] lg:text-[42px] xl:text-[52px]">
-            Our Clients
+            {content.title}
           </h2>
 
           <p className="max-w-[720px] font-mulish text-[15px] leading-[1.6] tracking-[-0.01em] text-[#4b5563] sm:text-[16px]">
-            Brands that trust us to elevate their digital presence.
+            {content.description}
           </p>
         </div>
 

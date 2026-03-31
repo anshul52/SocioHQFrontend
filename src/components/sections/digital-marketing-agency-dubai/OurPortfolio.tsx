@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import {
+  type PortfolioSectionContent,
+  usaDigitalMarketingAgencyContent,
+} from "@/content/digital-marketing-agency";
 
 type PortfolioCard = {
   title: string;
@@ -59,10 +63,6 @@ const bottomRow: PortfolioCard[] = [
 ];
 
 const PortfolioTile = ({ card }: { card: PortfolioCard }) => {
-  const titleClass = card.wide
-    ? "max-w-[11ch] text-[clamp(2.5rem,5vw,4rem)]"
-    : "max-w-[10ch] text-[clamp(2.5rem,4.2vw,4rem)]";
-
   const descriptionClass = card.wide ? "max-w-[36rem]" : "max-w-[24rem]";
   const aspectClass = card.wide
     ? "aspect-[1100/584] min-h-[440px] md:min-h-[520px]"
@@ -114,28 +114,29 @@ const PortfolioTile = ({ card }: { card: PortfolioCard }) => {
   );
 };
 
-const OurPortfolio = () => {
+type OurPortfolioProps = {
+  content?: PortfolioSectionContent;
+};
+
+const OurPortfolio = ({
+  content = usaDigitalMarketingAgencyContent.portfolio,
+}: OurPortfolioProps) => {
   return (
     <section id="portfolio-dm" className="bg-white px-14 py-20 lg:py-24">
       <div className="mx-auto flex w-full max-w-8xl flex-col items-center gap-16">
         <div className="flex max-w-[900px] flex-col items-center gap-6 text-center">
           <div className="inline-flex items-center rounded-full bg-[#F8FAFC] px-4 py-1.5 shadow-[inset_0_0_0_1px_rgba(2,6,23,0.08)]">
             <span className="font-mulish text-[13px] font-medium text-[#020617]">
-              Crafted Success Stories
+              {content.badge}
             </span>
           </div>
 
           <h2 className="text-[52px] font-bold font-lexend tracking-tighter text-center mb-4">
-            Our Portfolio
+            {content.title}
           </h2>
 
           <p className="max-w-[980px] font-mulish text-[17px] leading-8 tracking-[-0.01em] text-[#767575] md:text-[20px]">
-            Explore a curated selection of our digital marketing success
-            stories. From brand strategy and content creation to paid campaigns
-            and performance analytics, our portfolio showcases the results
-            we&apos;ve delivered across industries. Each project reflects our
-            commitment to creativity, data-driven execution, and measurable
-            growth.
+            {content.description}
           </p>
         </div>
 

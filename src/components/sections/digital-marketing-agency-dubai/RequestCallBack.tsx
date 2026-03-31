@@ -1,15 +1,26 @@
 "use client";
+
+import { Fragment } from "react";
+import { motion, Variants } from "framer-motion";
 import { ImPhone } from "react-icons/im";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone } from "lucide-react";
-import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import {
+  type RequestCallBackContent,
+  usaDigitalMarketingAgencyContent,
+} from "@/content/digital-marketing-agency";
 
-const RequestCallBack = () => {
+type RequestCallBackProps = {
+  content?: RequestCallBackContent;
+};
+
+const RequestCallBack = ({
+  content = usaDigitalMarketingAgencyContent.requestCallBack,
+}: RequestCallBackProps) => {
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -21,6 +32,7 @@ const RequestCallBack = () => {
       },
     },
   };
+
   return (
     <section className="relative bg-black w-full min-h-screen flex items-center justify-center text-white overflow-hidden px-6 sm:px-18 py-25">
       <Image
@@ -32,9 +44,7 @@ const RequestCallBack = () => {
       />
 
       <div className="relative z-10 max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* LEFT CONTENT */}
         <div className="flex flex-col items-start justify-center pl-15">
-          {/* Avatars + rating */}
           <div className="flex flex-col items-start gap-4 mb-6">
             <div className="flex -space-x-3">
               <Image
@@ -62,31 +72,28 @@ const RequestCallBack = () => {
 
             <div>
               <p className="text-lg text-gray-200 font-semibold">
-                Trusted by 6,287 Customers
+                {content.trustedByText}
               </p>
               <div className="flex items-center gap-2 text-orange-400 text-[22px]">
-                ★★★★★ <span className="text-white text-base">4.8/5</span>
+                {"\u2605\u2605\u2605\u2605\u2605"}
+                <span className="text-white text-base">{content.ratingText}</span>
               </div>
             </div>
           </div>
 
-          {/* Heading */}
           <h1 className="text-4xl lg:text-5xl font-inter font-semibold leading-tight mb-6">
-            Award Winning <br />
-            Digital Marketing <br />
-            Agency in Dubai
+            {content.heading.lines.map((line, index) => (
+              <Fragment key={line}>
+                {line}
+                {index < content.heading.lines.length - 1 ? <br /> : null}
+              </Fragment>
+            ))}
           </h1>
 
-          {/* Description */}
           <p className="text-gray-300 max-w-xl mb-8 leading-relaxed pr-20">
-            We understand the pulse of digital advertising and specialize in
-            crafting comprehensive digital marketing solutions that maximize
-            your ROI. As a leading digital marketing agency recognized among top
-            digital marketing companies in Dubai, we offer a full suite of
-            advertising services tailored to your business needs.
+            {content.description}
           </p>
 
-          {/* Button */}
           <motion.div
             variants={itemVariants}
             className="mt-8 flex justify-center"
@@ -101,36 +108,34 @@ const RequestCallBack = () => {
                 />
                 <span className="pointer-events-none absolute inset-[1.5px] rounded-full bg-black" />
                 <Button className="relative font-inter z-10 rounded-full bg-transparent px-8 py-6 text-lg text-white hover:bg-transparent">
-                  View Portfolio
+                  {content.buttonLabel}
                 </Button>
               </div>
             </div>
           </motion.div>
         </div>
-        {/* text-[clamp(1.25rem,3.8vw,2.85rem)] */}
-        {/* RIGHT FORM */}
+
         <Card className="bg-white text-black rounded-2xl shadow-2xl w-full max-w-[30rem] mx-auto">
           <CardContent className="p-8 space-y-5 px-13">
-            {/* Heading */}
             <div className="text-center space-y-2">
-              <h2 className="inline-flex flex-col items-center text-center font-inter font-medium  text-[50px] leading-[1.2] tracking-[-0.08em]">
+              <h2 className="inline-flex flex-col items-center text-center font-inter font-medium text-[50px] leading-[1.2] tracking-[-0.08em]">
                 <span className="bg-[linear-gradient(90deg,#05111d_0%,#10263b_62%,#4d93cd_100%)] bg-clip-text text-transparent">
-                  Request A <span className="opacity-0">.</span>
+                  {content.formHeading.lines[0]}
+                  <span className="opacity-0">.</span>
                 </span>
                 <span className="flex items-end gap-3 relative">
                   <span className="bg-[linear-gradient(90deg,#05111d_0%,#10263b_68%,#3d86c6_100%)] leading-[0.80] bg-clip-text text-transparent">
-                    Call Back<span className="opacity-0">.</span>
+                    {content.formHeading.lines[1]}
+                    <span className="opacity-0">.</span>
                   </span>
-                  <ImPhone className=" h-12 w-12 shrink-0 rotate-[deg] text-[#3d86c6] stroke-[0.001]" />
+                  <ImPhone className="h-12 w-12 shrink-0 text-[#3d86c6] stroke-[0.001]" />
                 </span>
               </h2>
               <p className="text-gray-500 text-base font-inter mb-10">
-                To contact us, fill out the form below and we'll get back to you
-                within 24 hours.
+                {content.formDescription}
               </p>
             </div>
 
-            {/* Form */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2 text-left">
                 <Label
@@ -204,7 +209,7 @@ const RequestCallBack = () => {
             </div>
 
             <Button className="w-full bg-[#333333] py-5 font-bold text-white hover:bg-gray-900 shadow-lg">
-              Submit
+              {content.submitLabel}
             </Button>
           </CardContent>
         </Card>

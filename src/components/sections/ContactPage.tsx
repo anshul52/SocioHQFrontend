@@ -1,45 +1,56 @@
 "use client";
+
+import { Fragment } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import {
+  type ContactSectionContent,
+  usaDigitalMarketingAgencyContent,
+} from "@/content/digital-marketing-agency";
 
-export default function ContactPage() {
+type ContactPageProps = {
+  content?: ContactSectionContent;
+};
+
+export default function ContactPage({
+  content = usaDigitalMarketingAgencyContent.contact,
+}: ContactPageProps) {
   return (
     <div
-      className="h-[110vh]  flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="h-[110vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/images/51tnZtqll1e78fxWnMl2oObKT0.avif')",
       }}
     >
       <div className="w-full max-w-6xl flex rounded-3xl overflow-hidden mt-4">
-        {/* LEFT SIDE */}
-        <div className="relative p-12 flex flex-col justify-center text-white ">
-          {/* Decorative lines */}
+        <div className="relative p-12 flex flex-col justify-center text-white">
           <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-            <div className="absolute top-10 left-0 w-full h-[2px] bg-purple-300 blur-sm"></div>
-            <div className="absolute top-16 left-0 w-full h-[2px] bg-purple-300 blur-sm"></div>
+            <div className="absolute top-10 left-0 w-full h-[2px] bg-purple-300 blur-sm" />
+            <div className="absolute top-16 left-0 w-full h-[2px] bg-purple-300 blur-sm" />
           </div>
 
-          {/* Placeholder for your image/icon */}
           <div className="mb-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-400 rounded-xl"></div>
+            <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-400 rounded-xl" />
           </div>
 
           <h1 className="text-[63px] font-semibold leading-tight mb-6">
-            Have a project <br /> in mind? 👋
+            {content.heading.lines.map((line, index) => (
+              <Fragment key={line}>
+                {line}
+                {index < content.heading.lines.length - 1 ? <br /> : null}
+              </Fragment>
+            ))}
           </h1>
 
           <p className="text-lg text-gray-200 mb-6 max-w-md">
-            Connect with our team of dazzling designers and creative developers.
+            {content.description}
           </p>
 
-          <p className="text-lg text-gray-200">
-            Catch us for coffee, it's always on us ☕
-          </p>
+          <p className="text-lg text-gray-200">{content.subdescription}</p>
         </div>
 
-        {/* RIGHT SIDE */}
         <Card className="rounded-[2.5rem] bg-[#f5f5f5]">
           <CardContent className="p-8 w-130">
             <div className="grid grid-cols-2 gap-4">
@@ -54,7 +65,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="text-xs font-medium  text-[#888888]">
+                <label className="text-xs font-medium text-[#888888]">
                   Email<span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -66,7 +77,7 @@ export default function ContactPage() {
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="text-xs font-medium  text-[#888888]">
+                <label className="text-xs font-medium text-[#888888]">
                   Phone<span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -76,7 +87,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="text-xs font-medium  text-[#888888]">
+                <label className="text-xs font-medium text-[#888888]">
                   Website
                 </label>
                 <Input
@@ -87,7 +98,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mb-6">
-              <label className="text-xs font-medium  text-[#888888]">
+              <label className="text-xs font-medium text-[#888888]">
                 Message
               </label>
               <Textarea
@@ -97,7 +108,7 @@ export default function ContactPage() {
             </div>
 
             <Button className="w-full bg-[#2c2c2c] hover:bg-black text-white py-6 text-base rounded-xl">
-              Submit
+              {content.submitLabel}
             </Button>
           </CardContent>
         </Card>
