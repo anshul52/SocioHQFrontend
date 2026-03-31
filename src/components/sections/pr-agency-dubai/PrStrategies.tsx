@@ -88,9 +88,9 @@ function Badge({ label }: { label: string }) {
 }
 
 function StrategyImage({
-  src,
-  alt,
-  className,
+  imageSrc,
+  imageAlt,
+  imageClassName,
 }: Pick<StrategyCard, "imageSrc" | "imageAlt" | "imageClassName">) {
   return (
     <div className="relative h-[320px] w-full overflow-hidden rounded-[16px] border-4 border-white bg-[#F1F5F9] min-[1200px]:h-[580px]">
@@ -99,11 +99,11 @@ function StrategyImage({
       <div className="absolute right-[18px] bottom-[84px] h-[150px] w-[150px] rounded-full bg-[#F69A3266] blur-[100px] min-[1200px]:right-[75px] min-[1200px]:bottom-[89px]" />
 
       <Image
-        src={src}
-        alt={alt}
+        src={imageSrc}
+        alt={imageAlt}
         fill
         sizes="(min-width: 1440px) 580px, (min-width: 1200px) calc((100vw - 294px) / 2), (min-width: 810px) calc(100vw - 200px), calc(100vw - 40px)"
-        className={className}
+        className={imageClassName}
       />
     </div>
   );
@@ -113,9 +113,9 @@ function StrategyCard({ card }: { card: StrategyCard }) {
   const imageBlock = (
     <div className="w-full min-[1200px]:flex-1">
       <StrategyImage
-        src={card.imageSrc}
-        alt={card.imageAlt}
-        className={card.imageClassName}
+        imageSrc={card.imageSrc}
+        imageAlt={card.imageAlt}
+        imageClassName={card.imageClassName}
       />
     </div>
   );
