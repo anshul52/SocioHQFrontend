@@ -32,25 +32,6 @@ const heroPhrases = [
   { text: "SEO", gradient: "from-violet-500 to-fuchsia-500" },
 ] as const;
 
-function ArrowIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={cn("h-[18px] w-[18px] shrink-0", className)}
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M7 17 17 7M9 7h8v8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
 function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
